@@ -8,3 +8,13 @@ Makefile
 
 # Pliki wykonywalne
 /hello
+
+# Visual studio 08
+
+*.vcproj*
+*.ncb
+*.sln
+*.exe
+*.idb
+*.ilk
+*.pdb
