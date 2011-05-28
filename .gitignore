@@ -1,0 +1,10 @@
+# Rzeczy CMake
+
+CMakeCache.txt
+CMakeFiles
+*.cmake
+*.dir/
+Makefile
+
+# Pliki wykonywalne
+/hello
