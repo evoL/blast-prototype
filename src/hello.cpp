@@ -67,7 +67,7 @@ int main (int argc, char* argv[]) {
     font = TTF_OpenFont(projectPath("defused.ttf").c_str(), 96);
     
     // tekst
-    text = TTF_RenderText_Solid(font, "Dziala!", textColor);
+    text = TTF_RenderText_Blended(font, "Dziala!", textColor);
     
     // wciepywanie na ekran
     applySurface(0, 0, bg, screen);
