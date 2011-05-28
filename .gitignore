@@ -6,13 +6,20 @@ CMakeScripts
 *.dir/
 Makefile
 
-# Pliki wykonywalne
-/hello
-
 # Xcode
 /*.xcodeproj
 *postBuildPhase*
 build/
 *.build/
-src/configuration.h
 Debug/
+
+# Visual Studio 2008
+*.vcproj*
+*.ncb
+*.sln
+*.idb
+*.ilk
+*.pdb
+
+# Nasze z projektu
+src/configuration.h
