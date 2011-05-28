@@ -20,6 +20,7 @@ Debug/
 *.idb
 *.ilk
 *.pdb
+*.suo
 
 # Nasze z projektu
 src/configuration.h
