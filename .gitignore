@@ -1,10 +1,18 @@
 # Rzeczy CMake
-
 CMakeCache.txt
 CMakeFiles
+CMakeScripts
 *.cmake
 *.dir/
 Makefile
 
 # Pliki wykonywalne
 /hello
+
+# Xcode
+/*.xcodeproj
+*postBuildPhase*
+build/
+*.build/
+src/configuration.h
+Debug/

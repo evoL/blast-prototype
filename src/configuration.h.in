@@ -1,0 +1,17 @@
+#ifndef CONFIGURATION_H_IN_3NNJBXB7
+#define CONFIGURATION_H_IN_3NNJBXB7
+
+#define PROJECT_ROOT "@PROJECT_SOURCE_DIR@"
+
+#include <string>
+#include <cstring>
+
+std::string projectPath(const char* filename) {
+    std::string str = PROJECT_ROOT;
+    str += "/";
+    str += filename;
+    
+    return str;
+}
+
+#endif /* end of include guard: CONFIGURATION_H_IN_3NNJBXB7 */
