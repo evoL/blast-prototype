@@ -1,6 +1,6 @@
 set (
   SOURCES
-  hello.cpp
+  main.cpp
 )
 
 configure_file (
@@ -32,13 +32,13 @@ include_directories (
 )
 
 add_executable (
-  hello
+  cuboid
   ${SOURCES}
   ${ADDITIONAL}
 )
 
 target_link_libraries (
-  hello
+  cuboid
   ${SDL_LIBRARY}
   ${SDLIMAGE_LIBRARY}
   ${SDLTTF_LIBRARY}
