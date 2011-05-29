@@ -1,7 +1,4 @@
-set (
-  SOURCES
-  main.cpp
-)
+add_subdirectory (engine)
 
 configure_file (
   "configuration.h.in"
@@ -16,30 +13,18 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
   )
 endif ()
 
-find_package (SDL REQUIRED)
-find_package (SDL_image REQUIRED)
-find_package (SDL_ttf REQUIRED)
-
-if (NOT SDL_FOUND)
-  message (FATAL_ERROR "SDL not found!")
-endif ()
-
 include_directories (
   .
-  ${SDL_INCLUDE_DIR}
-  ${SDLIMAGE_INCLUDE_DIR}
-  ${SDLTTF_INCLUDE_DIR}
+  engine
 )
 
 add_executable (
   cuboid
-  ${SOURCES}
+  main.cpp
   ${ADDITIONAL}
 )
 
 target_link_libraries (
   cuboid
-  ${SDL_LIBRARY}
-  ${SDLIMAGE_LIBRARY}
-  ${SDLTTF_LIBRARY}
+  engine
 )
