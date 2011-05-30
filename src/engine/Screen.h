@@ -4,13 +4,16 @@
 #include "SDL.h"
 #include <vector>
 
+#include "Surface.h"
+
 class Screen {
-    const int WIDTH = 640;
-    const int HEIGHT = 480;
-    const int BPP = 32;
-    
     SDL_Surface* screen;
     std::vector<Surface> surfaces;
+    
+public:
+    static const int WIDTH = 640;
+    static const int HEIGHT = 480;
+    static const int BPP = 32;    
     
     Screen();
     

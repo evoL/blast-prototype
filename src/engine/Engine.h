@@ -1,6 +1,8 @@
 #ifndef ENGINE_H_9JZ11TDO
 #define ENGINE_H_9JZ11TDO
 
+#include "Screen.h"
+
 class Engine {
     Screen screen;
     bool running;
