@@ -12,7 +12,7 @@ Engine::~Engine() {
 
 bool Engine::init() {
     if (SDL_Init(SDL_INIT_EVERYTHING) == -1) return false;
-    if (TTF_Quit() == -1) return false;
+    if (TTF_Init() == -1) return false;
     
     screen = NULL;
     SDL_WM_SetCaption("Cuboid", NULL);
@@ -20,7 +20,7 @@ bool Engine::init() {
     return true;
 }
 
-void Engine::setScreen(Screen s) {
+void Engine::setScreen(Screen *s) {
     screen = s;
 }
 

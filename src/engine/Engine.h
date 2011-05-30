@@ -4,7 +4,7 @@
 #include "Screen.h"
 
 class Engine {
-    Screen screen;
+    Screen *screen;
     bool running;
     
     Engine();
@@ -13,7 +13,7 @@ class Engine {
     bool init();
     void run();
     
-    void setScreen(Screen s);
+    void setScreen(Screen *s);
 };
 
 #endif /* end of include guard: ENGINE_H_9JZ11TDO */
