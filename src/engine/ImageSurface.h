@@ -6,11 +6,10 @@
 
 class ImageSurface : public Surface {
     bool ok;
-    
-    bool load(std::string file);
-    
+
 public:
     ImageSurface(std::string file);
+    bool load(std::string file);
     bool loaded();
 };
 

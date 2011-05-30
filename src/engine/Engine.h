@@ -6,7 +6,8 @@
 class Engine {
     Screen screen;
     bool running;
-    
+
+public:
     Engine();
     ~Engine();
     
