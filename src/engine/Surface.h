@@ -4,10 +4,10 @@
 #include "SDL.h"
 
 class Surface {
-protected:
+public:
     SDL_Surface* surface;
     SDL_Rect offset;
-public:
+
     ~Surface();
     
     void setPosition(int x, int y);

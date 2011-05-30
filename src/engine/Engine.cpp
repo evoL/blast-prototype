@@ -19,7 +19,7 @@ bool Engine::init() {
     return true;
 }
 
-void Engine::setScreen(Screen s) {
+void Engine::setScreen(Screen *s) {
     screen = s;
 }
 
