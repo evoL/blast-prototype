@@ -8,6 +8,7 @@ public:
     SDL_Surface* surface;
     SDL_Rect offset;
 
+    Surface();
     ~Surface();
     
     void setPosition(int x, int y);

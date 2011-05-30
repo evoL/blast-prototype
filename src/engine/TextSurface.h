@@ -20,7 +20,6 @@ public:
     void setColor(int r, int g, int b);
     
     void apply(SDL_Surface* screen);
-	TextSurface();
 };
 
 #endif /* end of include guard: TEXTSURFACE_H_ON0L15PT */

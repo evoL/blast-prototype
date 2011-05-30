@@ -1,6 +1,11 @@
 #include "surface.h"
 #include "SDL.h"
 
+Surface::Surface() {
+    offset.x = 0;
+    offset.y = 0;
+}
+
 Surface::~Surface() {
     SDL_FreeSurface(surface);
 }
