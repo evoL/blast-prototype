@@ -4,7 +4,9 @@
 #include "SDL.h"
 #include "SDL_ttf.h"
 
-Engine::Engine() {}
+Engine::Engine() {
+    running = false;
+}
 Engine::~Engine() {
     TTF_Quit();
     SDL_Quit();
@@ -28,6 +30,8 @@ void Engine::run() {
     
     SDL_Event event;
     
+    screen->render();
+    
     while (running) {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
@@ -36,5 +40,5 @@ void Engine::run() {
         }
     }
     
-    
+    running = false;
 }

@@ -2,6 +2,7 @@
 #include "SDL.h"
 
 Surface::Surface() {
+    surface = NULL;
     offset.x = 0;
     offset.y = 0;
 }

@@ -19,7 +19,7 @@ public:
     bool setFont(std::string font, int size);
     void setColor(int r, int g, int b);
     
-    void apply(SDL_Surface* screen);
+    virtual void apply(SDL_Surface* screen);
 };
 
 #endif /* end of include guard: TEXTSURFACE_H_ON0L15PT */

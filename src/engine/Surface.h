@@ -12,7 +12,7 @@ public:
     ~Surface();
     
     void setPosition(int x, int y);
-    void apply(SDL_Surface* screen);
+    virtual void apply(SDL_Surface* screen);
 };
 
 #endif

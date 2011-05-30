@@ -9,16 +9,17 @@ int main (int argc, char* argv[]) {
     Engine e;
     Screen s;
     
+    e.init();
+    
     ImageSurface img(projectPath("dziala.png"));
-    s.add(img);
+    s.add(&img);
     
     TextSurface txt;
     txt.setText("Dziala!");
     txt.setFont(projectPath("defused.ttf"), 96);
     txt.setPosition(80, 192);
-    s.add(txt);
+    s.add(&txt);
     
-    e.init();
     e.setScreen(&s);
     e.run();
     

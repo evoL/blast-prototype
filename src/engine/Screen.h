@@ -8,7 +8,7 @@
 
 class Screen {
     SDL_Surface* screen;
-    std::vector<Surface> surfaces;
+    std::vector<Surface*> surfaces;
     
 public:
     static const int WIDTH = 640;
@@ -18,7 +18,7 @@ public:
     Screen();
     
     void render();
-    void add(Surface s);
+    void add(Surface* s);
 };
 
 #endif
