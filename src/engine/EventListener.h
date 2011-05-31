@@ -1,11 +1,11 @@
 #ifndef EVENTLISTENER_H
 #define EVENTLISTENER_H
 
-class EventListener {
+class EventListener { 
 
-protected:
+public:
 	EventListener();
-
+	virtual void execute()=0;
 };
 
 

@@ -22,6 +22,7 @@ add_library (
   Surface.cpp
   ImageSurface.cpp
   TextSurface.cpp
+  TestSurface.cpp
 )
 
 target_link_libraries (

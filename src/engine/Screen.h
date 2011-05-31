@@ -8,9 +8,8 @@
 
 class Screen {
     SDL_Surface* screen;
-    std::vector<Surface*> surfaces;
-    
 public:
+    std::vector<Surface*> surfaces;
     static const int WIDTH = 640;
     static const int HEIGHT = 480;
     static const int BPP = 32;    

@@ -1,6 +1,6 @@
 #include "Engine.h"
 #include "Screen.h"
-
+#include "Surface.h"
 #include "SDL.h"
 #include "SDL_ttf.h"
 
@@ -37,8 +37,27 @@ void Engine::run() {
             if (event.type == SDL_QUIT) {
                 running = false;
             }
-        }
-    }
+
+			else if(event.type == SDL_MOUSEBUTTONDOWN) {
+				Size a;//struktura
+				a.x=event.button.x;
+				a.y=event.button.y;
+				a.h=1;
+				a.w=1;
+				std::vector<Surface*>::iterator i;
+				
+				if (screen->surfaces.size() > 0) {
+					 for (i=screen->surfaces.begin(); i<screen->surfaces.end(); i++) {
+						 if((*i)->check(a)==true) { //sprawdzanie czy jest kolizja
+							 (*i)->FireEvent("click");//jak tak to wywalamy eventy!!!
+						 }//koniec fora
+					 }//koniec ifa
+						
+				 }//koniec ifa
+						 
+			 }//koniec elsa
+		}//koniec while z eventem
+	}//koniec running
     
     running = false;
 }

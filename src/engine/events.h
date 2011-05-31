@@ -8,10 +8,10 @@
 class Events {
  
 public:
-	std::map<std::string,std::vector <EventListener*> >  EventTable;
-	void AddEvent(std::string name,EventListener *event);
-	void FireEvent(std::string name,EventListener *event);
-	void RemoveEvent(std::string name,EventListener *event); 
+	std::map<std::string,std::vector <EventListener*> >  EventTable; //taka tablica z vektorami
+	virtual void AddEvent(std::string name,EventListener *event);
+	virtual void FireEvent(std::string name);
+	virtual void RemoveEvent(std::string name,EventListener *event); 
 
 };
 
