@@ -1,18 +1,20 @@
 #ifndef EVENTS_H
 #define EVENTS_H
+
 #include<string>
 #include<vector>
 #include <map>
 #include "EventListener.h"
 
-class Events {
- 
-public:
-	std::map<std::string,std::vector <EventListener*> >  EventTable; //taka tablica z vektorami
-	virtual void AddEvent(std::string name,EventListener *event);
-	virtual void FireEvent(std::string name);
-	virtual void RemoveEvent(std::string name,EventListener *event); 
+typedef std::vector<EventListener*> event_vector;
 
+class Events {
+public:
+    std::map<std::string, event_vector> eventMap;
+
+    virtual void addEvent(std::string name, EventListener *event);
+    virtual void fireEvent(std::string name);
+    virtual void removeEvent(std::string name, EventListener *event);
 };
 
 

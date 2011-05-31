@@ -2,22 +2,24 @@
 #define SURFACE_H
 
 #include "SDL.h"
-#include "events.h"
-struct Size {
-	int x,y,h,w;
-};
+#include "Events.h"
+#include "types.h"
 
-class Surface :public Events{
+
+class Surface : public Events {
 public:
     SDL_Surface* surface;
     SDL_Rect offset;
-	Size siz;
+
     Surface();
     ~Surface();
-    
+
     void setPosition(int x, int y);
+    void setSize(int w, int h);
     virtual void apply(SDL_Surface* screen);
-	virtual bool check(Size a); //sprawdza kolizje
+
+    virtual bool collidesWith(Rect r);
+    virtual bool collidesWith(Point p); //sprawdza kolizje
 };
 
 #endif

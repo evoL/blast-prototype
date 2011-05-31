@@ -8,11 +8,8 @@
 
 class button : public Surface {
 public:
- SDL_Rect *rect;
- int color;
- button(int x,int y,int px,int py);
- void apply(SDL_Surface* screen);
-
+    int color;
+    void apply (SDL_Surface* screen);
 };
 
 

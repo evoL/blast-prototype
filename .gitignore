@@ -5,6 +5,7 @@ CMakeScripts
 *.cmake
 *.dir/
 Makefile
+tags
 
 # Xcode
 /*.xcodeproj
@@ -24,3 +25,8 @@ Debug/
 
 # Nasze z projektu
 src/configuration.h
+
+# Exeki
+cuboid
+cuboid.exe
+*.a
