@@ -13,16 +13,13 @@ include_directories (
   ${SDLTTF_INCLUDE_DIR}
 )
 
+file (GLOB SRCS "*.cpp")
+file (GLOB HDRS "*.h") 
+
 add_library (
   engine
-  Engine.cpp
-  EventListener.cpp
-  Events.cpp
-  Screen.cpp
-  Surface.cpp
-  ImageSurface.cpp
-  TextSurface.cpp
-  TestSurface.cpp
+  ${SRCS}
+  ${HDRS}
 )
 
 target_link_libraries (
