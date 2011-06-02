@@ -6,7 +6,8 @@
 #include "types.h"
 
 
-class Surface : public Events {
+
+class Surface : public Events{
 public:
     SDL_Surface* surface;
     SDL_Rect offset;
