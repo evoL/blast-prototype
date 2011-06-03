@@ -18,48 +18,53 @@
 #include "Container.h"
 #include "types.h"
 
-/**
- * @class Surface
- * @brief Powierzchnia.
- */
-class Surface : public Container{
-public:
-    SDL_Surface* surface;
+namespace Blast {
+    
+    /**
+     * @class Surface
+     * @brief Powierzchnia.
+     */
+    class Surface : public Container{
+    public:
+        SDL_Surface* surface;
 
-    Surface(); ///< Konstruktor.
-    ~Surface(); ///< Destruktor.
+        Surface(); ///< Konstruktor.
+        ~Surface(); ///< Destruktor.
 
-    /**
-     * @brief   Ustala pozycję powierzchni.
-     * @param   x Pozycja poziomo.
-     * @param   y Pozycja pionowo.
-     */
-    void setPosition(int x, int y);
-    /**
-     * @brief   Ustala rozmiar powierzchni.
-     * @param   w Szerokość powierzchni.
-     * @param   h Wysokość powierzchni.
-     */
-    void setSize(int w, int h);
+        /**
+         * @brief   Ustala pozycję powierzchni.
+         * @param   x Pozycja poziomo.
+         * @param   y Pozycja pionowo.
+         */
+        void setPosition(int x, int y);
+        /**
+         * @brief   Ustala rozmiar powierzchni.
+         * @param   w Szerokość powierzchni.
+         * @param   h Wysokość powierzchni.
+         */
+        void setSize(int w, int h);
 
-    /**
-     * @brief   Aplikuje powierzchnię na inną.
-     * @param   screen Powierzchnia, na którą ma zaaplikować.
-     */
-    virtual void apply(SDL_Surface* screen);
+        /**
+         * @brief   Aplikuje powierzchnię na inną.
+         * @param   screen Powierzchnia, na którą ma zaaplikować.
+         */
+        virtual void apply(SDL_Surface* screen);
 
-    /**
-     * @brief   Sprawdza, czy powierzchnia koliduje z prostokątem.
-     * @param   r Prostokąt.
-     * @return  Koliduje albo nie.
-     */
-    virtual bool collidesWith(Rect r);
-    /**
-     * @brief   Sprawdza, czy powierzchnia koliduje z punktem.
-     * @param   p Punkt
-     * @return  Koliduje albo nie.
-     */
-    virtual bool collidesWith(Point p); //sprawdza kolizje
+        /**
+         * @brief   Sprawdza, czy powierzchnia koliduje z prostokątem.
+         * @param   r Prostokąt.
+         * @return  Koliduje albo nie.
+         */
+        virtual bool collidesWith(Rect r);
+        /**
+         * @brief   Sprawdza, czy powierzchnia koliduje z punktem.
+         * @param   p Punkt
+         * @return  Koliduje albo nie.
+         */
+        virtual bool collidesWith(Point p); //sprawdza kolizje
+
+    };
+
 };
 
 #endif

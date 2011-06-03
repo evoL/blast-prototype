@@ -4,15 +4,14 @@
 
 #include "SDL.h"
 #include "Surface.h"
-
-
-class button : public Surface {
-public:
-    int color;
-    void apply (SDL_Surface* screen);
-	button();
+namespace Blast {
+    class button : public Surface {
+    public:
+        int color;
+        void apply (SDL_Surface* screen);
+	    button();
+    };
 };
-
 
 
 

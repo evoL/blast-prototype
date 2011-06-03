@@ -16,21 +16,24 @@
 
 #include "Surface.h"
 #include <string>
-
-/**
- * @class ImageSurface
- * @brief Powierzchnia zawierająca obrazek.
- */
-class ImageSurface : public Surface {
-public:
-    ImageSurface(); ///< Konstruktor.
-
+namespace Blast {
+    
     /**
-     * @brief   Ładuje podany obrazek.
-     * @param   file Ścieżka do pliku z obrazkiem.
-     * @return  Czy załadowało, czy nie.
+     * @class ImageSurface
+     * @brief Powierzchnia zawierająca obrazek.
      */
-    bool load(std::string file);
-};
+    class ImageSurface : public Surface {
+    public:
+        ImageSurface(); ///< Konstruktor.
 
+        /**
+         * @brief   Ładuje podany obrazek.
+         * @param   file Ścieżka do pliku z obrazkiem.
+         * @return  Czy załadowało, czy nie.
+         */
+        bool load(std::string file);
+
+    };
+
+};
 #endif /* end of include guard: IMAGESURFACE_H_AX5NGNQT */

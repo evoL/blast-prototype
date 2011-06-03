@@ -19,7 +19,7 @@
 #include "engine/TextSurface.h"
 #include "engine/TestSurface.h"
 #include "engine/EventListener.h"
-
+using namespace Blast;
 class quit : public EventListener {  // To jest nasz event.
     void execute() {
         SDL_Quit();
@@ -41,7 +41,6 @@ int main (int argc, char* argv[]) {
 
     ImageSurface img;
     img.load(projectPath("dziala.png"));
-    img.addEvent ("click", &ev);
     s.add (&img);
 
     button but;
