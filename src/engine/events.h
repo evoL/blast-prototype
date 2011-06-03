@@ -5,17 +5,17 @@
 #include<vector>
 #include <map>
 #include "EventListener.h"
+namespace Blast {
+    typedef std::vector<EventListener*> event_vector;
 
-typedef std::vector<EventListener*> event_vector;
+    class Events {
+    public:
+        std::map<std::string, event_vector> eventMap;
 
-class Events {
-public:
-    std::map<std::string, event_vector> eventMap;
-
-    virtual void addEvent(std::string name, EventListener *event);
-    virtual void fireEvent(std::string name);
-    virtual void removeEvent(std::string name, EventListener *event);
+        virtual void addEvent(std::string name, EventListener *event);
+        virtual void fireEvent(std::string name);
+        virtual void removeEvent(std::string name, EventListener *event);
+    };
 };
-
 
 #endif

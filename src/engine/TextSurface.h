@@ -5,21 +5,22 @@
 #include <string>
 
 #include "Surface.h"
-
-class TextSurface : public Surface {
-    std::string text;
-    TTF_Font* font;
-    SDL_Color color;
-    
-public:
-    TextSurface();
-    ~TextSurface();
-    
-    void setText(std::string text);
-    bool setFont(std::string font, int size);
-    void setColor(int r, int g, int b);
-    
-    virtual void apply(SDL_Surface* screen);
+namespace Blast {
+    class TextSurface : public Surface {
+        std::string text;
+        TTF_Font* font;
+        SDL_Color color;
+        
+    public:
+        TextSurface();
+        ~TextSurface();
+        
+        void setText(std::string text);
+        bool setFont(std::string font, int size);
+        void setColor(int r, int g, int b);
+        
+        virtual void apply(SDL_Surface* screen);
+    };
 };
 
 #endif /* end of include guard: TEXTSURFACE_H_ON0L15PT */

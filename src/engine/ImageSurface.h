@@ -3,14 +3,14 @@
 
 #include "Surface.h"
 #include <string>
+namespace Blast {
+    class ImageSurface : public Surface {
+        bool ok;
 
-class ImageSurface : public Surface {
-    bool ok;
-
-public:
-    ImageSurface(std::string file);
-    bool load(std::string file);
-    bool loaded();
+    public:
+        ImageSurface(std::string file);
+        bool load(std::string file);
+        bool loaded();
+    };
 };
-
 #endif /* end of include guard: IMAGESURFACE_H_AX5NGNQT */

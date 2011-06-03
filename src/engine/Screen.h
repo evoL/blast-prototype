@@ -6,18 +6,16 @@
 
 
 #include "Container.h"
-
-class Screen : public Container {
-  
-public:
-    void render();
-    static const int WIDTH = 640;
-    static const int HEIGHT = 480;
-    static const int BPP = 32;    
-    
-    Screen();
-    
-    
+namespace Blast {
+    class Screen : public Container {    
+    public:
+        void render();
+        static const int WIDTH = 640;
+        static const int HEIGHT = 480;
+        static const int BPP = 32;    
+        
+        Screen();  
+        
+    };
 };
-
 #endif
