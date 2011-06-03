@@ -23,6 +23,9 @@ Debug/
 *.pdb
 *.suo
 
+# Dokumentacja
+doc/
+
 # Nasze z projektu
 src/configuration.h
 
