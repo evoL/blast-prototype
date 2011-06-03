@@ -1,20 +1,16 @@
-/*
- * =====================================================================================
+/**
+ *       @file  types.h
+ *      @brief  Różne przydatne definicje typów.
  *
- *       Filename:  types.h
+ *     @author  Rafał Hirsz, rafal@hirsz.co
+ *     @author  Robert Pętlak, rpetlak@gmail.com
  *
- *    Description:  Podstawowe typy używane w enginie.
- *
- *        Version:  1.0
- *        Created:  2011.05.31 21:09:18
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Rafał Hirsz (evol), rafal@hirsz.co
- *        Company:  
- *
+ *   @internal
+ *     Created  2011.06.04
+ *   Copyright  Copyright (c) 2011 Rafał Hirsz, Robert Pętlak
  * =====================================================================================
  */
+
 
 
 #ifndef  types_INC
@@ -22,10 +18,13 @@
 
 #include	"SDL.h"
 
+/**
+ * @brief Reprezentuje punkt.
+ */
 struct Point {
   int x,y;
 };				/* ----------  end of struct Point  ---------- */
 
-typedef SDL_Rect Rect;
+typedef SDL_Rect Rect; ///< Reprezentuje prostokąt.
 
 #endif   /* ----- #ifndef types_INC  ----- */

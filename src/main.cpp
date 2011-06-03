@@ -1,3 +1,16 @@
+/**
+ *       @file  main.cpp
+ *      @brief  Główny plik z grą.
+ *
+ *     @author  Rafał Hirsz, rafal@hirsz.co
+ *     @author  Robert Pętlak, rpetlak@gmail.com
+ *
+ *   @internal
+ *     Created  2011.06.04
+ *   Copyright  Copyright (c) 2011 Rafał Hirsz, Robert Pętlak
+ * =====================================================================================
+ */
+
 #include "configuration.h"
 #include <string>
 #include <stdlib.h>
@@ -14,6 +27,12 @@ class quit : public EventListener {  // To jest nasz event.
     }
 };
 
+/**
+ * @brief   Tu się wszystko zaczyna i kończy.
+ * @param   argc Ilość argumentów podanych w konsoli.
+ * @param   argv Tablica z argumentami.
+ * @return  To co zawsze \c main zwraca.
+ */
 int main (int argc, char* argv[]) {
     Engine e;
     Screen s;

@@ -21,10 +21,8 @@
 #include <map>
 #include "EventListener.h"
 
-
 /** @brief Definiuje wektor ze wskaźnikami do obiektów EventListener. */
 typedef std::vector<EventListener*> event_vector;
-
 
 /**
  * @class Events
@@ -34,10 +32,26 @@ typedef std::vector<EventListener*> event_vector;
  */
 class Events {
 public:
-    std::map<std::string, event_vector> eventMap;
+    std::map<std::string, event_vector> eventMap; ///< Mapa zawierająca obiekty #event_vector
 
+    /**
+     * @brief   Dodaje zdarzenie danego typu do obiektu.
+     * @param   name Typ zdarzenia.
+     * @param   event Obiekt zawierający zdarzenie.
+     */
     virtual void addEvent(std::string name, EventListener *event);
+
+    /**
+     * @brief   Wywołuje zdarzenie danego typu.
+     * @param   name Typ zdarzenia.
+     */
     virtual void fireEvent(std::string name);
+
+    /**
+     * @brief   Usuwa zdarzenie danego typu.
+     * @param   name Typ zdarzenia.
+     * @param   event Zdarzenie do usunięcia.
+     */
     virtual void removeEvent(std::string name, EventListener *event);
 };
 
