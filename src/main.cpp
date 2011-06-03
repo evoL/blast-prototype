@@ -39,7 +39,8 @@ int main (int argc, char* argv[]) {
     quit ev;// tu se robimy obiekt
     e.init();
 
-    ImageSurface img (projectPath ("dziala.png"));
+    ImageSurface img;
+    img.load(projectPath("dziala.png"));
     img.addEvent ("click", &ev);
     s.add (&img);
 

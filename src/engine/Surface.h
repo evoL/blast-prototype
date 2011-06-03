@@ -18,22 +18,13 @@
 #include "Container.h"
 #include "types.h"
 
-<<<<<<< HEAD
-
-
-class Surface : public Container{
-public:
-    SDL_Surface* surface;
-=======
 /**
  * @class Surface
  * @brief Powierzchnia.
  */
-class Surface : public Events {
+class Surface : public Container{
 public:
-    SDL_Surface* surface; ///< Powierzchnia z SDL.
-    SDL_Rect offset; ///< Wymiary i pozycja powierzchni.
->>>>>>> docs
+    SDL_Surface* surface;
 
     Surface(); ///< Konstruktor.
     ~Surface(); ///< Destruktor.
@@ -50,15 +41,12 @@ public:
      * @param   h Wysokość powierzchni.
      */
     void setSize(int w, int h);
-<<<<<<< HEAD
-   void apply(SDL_Surface* screen);
-=======
+
     /**
      * @brief   Aplikuje powierzchnię na inną.
      * @param   screen Powierzchnia, na którą ma zaaplikować.
      */
     virtual void apply(SDL_Surface* screen);
->>>>>>> docs
 
     /**
      * @brief   Sprawdza, czy powierzchnia koliduje z prostokątem.

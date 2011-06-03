@@ -31,6 +31,7 @@ public:
     static const int BPP = 32; ///< Głębia kolorów w bitach.
     
     Screen(); ///< Konstruktor.
+    void render(); ///< Robi to samo co w Container.
 };
 
 #endif

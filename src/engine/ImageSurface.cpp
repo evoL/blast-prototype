@@ -14,9 +14,7 @@
 #include "ImageSurface.h"
 #include "SDL_image.h"
 
-ImageSurface::ImageSurface(std::string file) {
-    ok = load(file);
-}
+ImageSurface::ImageSurface() {}
 
 bool ImageSurface::load(std::string file) {
     SDL_Surface* img = NULL;
@@ -28,8 +26,4 @@ bool ImageSurface::load(std::string file) {
     SDL_FreeSurface(img);
     
     return true;
-}
-
-bool ImageSurface::loaded() {
-    return ok;
 }
