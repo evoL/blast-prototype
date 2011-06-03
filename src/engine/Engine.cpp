@@ -2,7 +2,7 @@
 #include "Engine.h"
 #include "Screen.h"
 #include "Surface.h"
-
+#include "Container.h"
 #include "SDL.h"
 #include "SDL_ttf.h"
 
@@ -44,16 +44,12 @@ void Engine::run() {
                 Point a; //struktura
                 a.x=event.button.x;
                 a.y=event.button.y;
-                std::vector<Surface*>::iterator i;
+                Container *dupa;
+				dupa=(screen->objectAtPoint(a));
+				 if(dupa!=NULL)dupa->fireEvent("click");
+				
 
-                if (screen->surfaces.size() > 0) {
-                    for (i=screen->surfaces.begin(); i<screen->surfaces.end(); i++) {
-                        if((*i)->collidesWith(a)) { //sprawdzanie czy jest kolizja
-                            (*i)->fireEvent("click");//jak tak to wywalamy eventy!!!
-                        }//koniec fora
-                    }//koniec ifa
-
-                }//koniec ifa
+              
 
             }//koniec elsa
         }//koniec while z eventem

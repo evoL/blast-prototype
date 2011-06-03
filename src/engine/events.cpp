@@ -9,10 +9,12 @@ void Events::fireEvent ( std::string name ) { //robimy wszystkie eventy z vektor
     event_vector vec;
     vec = eventMap[name.c_str()];
 
-    if ( vec.size() > 0 )
+	if ( vec.size() > 0 ){
         for ( it = vec.begin(); it < vec.end(); it++ )
             ( *it )->execute();
+	}
 }
+
 
 void Events::removeEvent ( std::string name, EventListener *event ) {
     event_vector::iterator it;
