@@ -28,7 +28,7 @@ namespace Blast {
         }
     }
        
-    bool Container::colide_with(Point p) {
+    bool Container::collidesWith(Point p) {
 	    //std::vector<Container*>::iterator it;
 	    Rect r;
         r.x = p.x;
@@ -81,7 +81,7 @@ namespace Blast {
 	    std::vector<Container*>::iterator it;	
 
 	    for(it=surfaces.begin();it<surfaces.end();it++) {
-	        if((*it)->colide_with(x)&&(*it)->collide!=false) {
+	        if((*it)->collidesWith(x)&&(*it)->collide!=false) {
                 if((*it)->surfaces.empty()) return (*it);	
 			    else return (*it)->objectAtPoint(x);
 		    }

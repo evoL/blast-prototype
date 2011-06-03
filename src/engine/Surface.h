@@ -50,19 +50,6 @@ namespace Blast {
          */
         virtual void apply(SDL_Surface* screen);
 
-        /**
-         * @brief   Sprawdza, czy powierzchnia koliduje z prostokątem.
-         * @param   r Prostokąt.
-         * @return  Koliduje albo nie.
-         */
-        virtual bool collidesWith(Rect r);
-        /**
-         * @brief   Sprawdza, czy powierzchnia koliduje z punktem.
-         * @param   p Punkt
-         * @return  Koliduje albo nie.
-         */
-        virtual bool collidesWith(Point p); //sprawdza kolizje
-
     };
 
 };
