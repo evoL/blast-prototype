@@ -1,7 +1,7 @@
 #include "Container.h"
 
 void Container::add(Container* s) {
-    surfaces.push_back(s);
+	surfaces.push_back(s);
 	collide=true;
 }
 
@@ -9,8 +9,8 @@ void Container::render() {
     std::vector<Container*>::iterator i;
     
     if (surfaces.size() > 0) {
-        for (i=surfaces.begin(); i<surfaces.end(); i++) {
-            (*i)->apply(screen);
+		for (i=surfaces.begin(); i<surfaces.end(); i++) {
+			(*i)->apply(screen);
         }
     }
 }
@@ -21,9 +21,9 @@ bool Container::colide_with(Point p) {
     r.x = p.x;
     r.y = p.y;
     r.w = 1;
-    r.h = 1;
+	r.h = 1;
 
-	 int leftA, leftB;
+	int leftA, leftB;
     int rightA, rightB;
     int topA, topB;
     int bottomA, bottomB;
@@ -41,7 +41,7 @@ bool Container::colide_with(Point p) {
     bottomB = r.y + r.h;
 
     if( bottomA <= topB ) {
-        return false;
+		return false;
     }
 
     if( topA >= bottomB ) {
@@ -61,19 +61,15 @@ bool Container::colide_with(Point p) {
 	
 	return 0;
 }
-void Container::apply(SDL_Surface* screen) {
-}
+void Container::apply(SDL_Surface* screen) {};
 
 Container *Container::objectAtPoint(Point x) {
 
 	std::vector<Container*>::iterator it;	
 
-	for(it=surfaces.begin();it<surfaces.end();it++)
-	{
-		if((*it)->colide_with(x)&&(*it)->collide==true) 
-		{
-
-			if((*it)->surfaces.empty()) return (*it);	
+	for(it=surfaces.begin();it<surfaces.end();it++) {
+	    if((*it)->colide_with(x)&&(*it)->collide!=false) {
+            if((*it)->surfaces.empty()) return (*it);	
 			else return (*it)->objectAtPoint(x);
 		}
 		

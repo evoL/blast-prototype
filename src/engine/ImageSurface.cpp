@@ -3,6 +3,7 @@
 
 ImageSurface::ImageSurface(std::string file) {
     ok = load(file);
+	collide=false;
 }
 
 bool ImageSurface::load(std::string file) {

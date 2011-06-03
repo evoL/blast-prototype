@@ -46,11 +46,8 @@ void Engine::run() {
                 a.y=event.button.y;
                 Container *dupa;
 				dupa=(screen->objectAtPoint(a));
-				 if(dupa!=NULL)dupa->fireEvent("click");
+				if(dupa!=NULL)dupa->fireEvent("click");
 				
-
-              
-
             }//koniec elsa
         }//koniec while z eventem
     }//koniec running

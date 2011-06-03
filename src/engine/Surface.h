@@ -16,10 +16,8 @@ public:
 
     void setPosition(int x, int y);
     void setSize(int w, int h);
-   void apply(SDL_Surface* screen);
+    void apply(SDL_Surface* screen);
 
-    virtual bool collidesWith(Rect r);
-    virtual bool collidesWith(Point p); //sprawdza kolizje
 };
 
 #endif
