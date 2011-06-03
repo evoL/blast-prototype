@@ -1,3 +1,16 @@
+/**
+ *       @file  TextSurface.cpp
+ *      @brief  Powierzchnia zawierająca tekst.
+ *
+ *     @author  Rafał Hirsz, rafal@hirsz.co
+ *     @author  Robert Pętlak, rpetlak@gmail.com
+ *
+ *   @internal
+ *     Created  2011.06.04
+ *   Copyright  Copyright (c) 2011 Rafał Hirsz, Robert Pętlak
+ * =====================================================================================
+ */
+
 #include "TextSurface.h"
 
 TextSurface::TextSurface() {

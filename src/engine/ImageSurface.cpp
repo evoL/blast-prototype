@@ -1,3 +1,16 @@
+/**
+ *       @file  ImageSurface.cpp
+ *      @brief  Powierzchnia zawierająca obrazek.
+ *
+ *     @author  Rafał Hirsz, rafal@hirsz.co
+ *     @author  Robert Pętlak, rpetlak@gmail.com
+ *
+ *   @internal
+ *     Created  2011.06.03
+ *   Copyright  Copyright (c) 2011 Rafał Hirsz, Robert Pętlak
+ * =====================================================================================
+ */
+
 #include "ImageSurface.h"
 #include "SDL_image.h"
 
