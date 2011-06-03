@@ -1,29 +1,42 @@
+/**
+ *       @file  Container.cpp
+ *      @brief  Kontener na powierzchnie.
+ *
+ *     @author  Rafał Hirsz, rafal@hirsz.co
+ *     @author  Robert Pętlak, rpetlak@gmail.com
+ *
+ *   @internal
+ *     Created  2011.06.04
+ *   Copyright  Copyright (c) 2011 Rafał Hirsz, Robert Pętlak
+ * =====================================================================================
+ */
+
 #include "Container.h"
 
-void Container::add(Container* s) {
-    surfaces.push_back(s);
-	collide=true;
+void Container::add (Container* s) {
+    surfaces.push_back (s);
+    collide = true;
 }
 
 void Container::render() {
     std::vector<Container*>::iterator i;
-    
+
     if (surfaces.size() > 0) {
-        for (i=surfaces.begin(); i<surfaces.end(); i++) {
-            (*i)->apply(screen);
+        for (i = surfaces.begin(); i < surfaces.end(); i++) {
+            (*i)->apply (screen);
         }
     }
 }
-   
-bool Container::colide_with(Point p) {
-	//std::vector<Container*>::iterator it;
-	Rect r;
+
+bool Container::collidesWith (Point p) {
+    //std::vector<Container*>::iterator it;
+    Rect r;
     r.x = p.x;
     r.y = p.y;
     r.w = 1;
     r.h = 1;
 
-	 int leftA, leftB;
+    int leftA, leftB;
     int rightA, rightB;
     int topA, topB;
     int bottomA, bottomB;
@@ -40,44 +53,42 @@ bool Container::colide_with(Point p) {
     topB = r.y;
     bottomB = r.y + r.h;
 
-    if( bottomA <= topB ) {
+    if (bottomA <= topB) {
         return false;
     }
 
-    if( topA >= bottomB ) {
+    if (topA >= bottomB) {
         return false;
     }
 
-    if( rightA <= leftB ) {
+    if (rightA <= leftB) {
         return false;
     }
 
-    if( leftA >= rightB ) {
+    if (leftA >= rightB) {
         return false;
     }
 
     //jesli jest kolizja
     return true;
-	
-	return 0;
+
+    return 0;
 }
-void Container::apply(SDL_Surface* screen) {
+void Container::apply (SDL_Surface* screen) {
 }
 
-Container *Container::objectAtPoint(Point x) {
+Container *Container::objectAtPoint (Point x) {
 
-	std::vector<Container*>::iterator it;	
+    std::vector<Container*>::iterator it;
 
-	for(it=surfaces.begin();it<surfaces.end();it++)
-	{
-		if((*it)->colide_with(x)&&(*it)->collide==true) 
-		{
+    for (it = surfaces.begin(); it < surfaces.end(); it++) {
+        if ( (*it)->collidesWith (x) && (*it)->collide == true) {
 
-			if((*it)->surfaces.empty()) return (*it);	
-			else return (*it)->objectAtPoint(x);
-		}
-		
-	}
+            if ( (*it)->surfaces.empty()) return (*it);
+            else return (*it)->objectAtPoint (x);
+        }
 
-	
+    }
+
+
 }
