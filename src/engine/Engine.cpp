@@ -1,3 +1,16 @@
+/**
+ *       @file  Engine.cpp
+ *      @brief  Zawiera silnik gry.
+ *
+ *     @author  Rafał Hirsz, rafal@hirsz.co
+ *     @author  Robert Pętlak, rpetlak@gmail.com
+ *
+ *   @internal
+ *     Created  2011.06.03
+ *   Copyright  Copyright (c) 2011 Rafał Hirsz, Robert Pętlak
+ * =====================================================================================
+ */
+
 #include "types.h"
 #include "Engine.h"
 #include "Screen.h"
@@ -31,31 +44,33 @@ void Engine::run() {
     running = true;
 
     SDL_Event event;
+    Point a;
+    std::vector<Surface*>::iterator i;
 
+    // Tu będzie pętla (wątek?) od odświeżania obrazu.
     screen->render();
 
+    // Pętla do eventów
+    // TODO: zrobić to w osobnym wątku
     while (running) {
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
+            switch (event.type) {
+            case SDL_QUIT:
                 running = false;
-            }
-
-            else if(event.type == SDL_MOUSEBUTTONDOWN) {
-                Point a; //struktura
+                break;
+            case SDL_MOUSEBUTTONUP:
                 a.x=event.button.x;
                 a.y=event.button.y;
-                std::vector<Surface*>::iterator i;
 
                 if (screen->surfaces.size() > 0) {
                     for (i=screen->surfaces.begin(); i<screen->surfaces.end(); i++) {
                         if((*i)->collidesWith(a)) { //sprawdzanie czy jest kolizja
                             (*i)->fireEvent("click");//jak tak to wywalamy eventy!!!
-                        }//koniec fora
-                    }//koniec ifa
-
-                }//koniec ifa
-
-            }//koniec elsa
+                        }
+                    }
+                }
+                break;
+            }
         }//koniec while z eventem
     }//koniec running
 
