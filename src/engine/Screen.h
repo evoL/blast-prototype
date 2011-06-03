@@ -4,20 +4,20 @@
 #include "SDL.h"
 #include <vector>
 
-#include "Surface.h"
 
-class Screen {
-    SDL_Surface* screen;
+#include "ContainerClass.h"
+
+class Screen : public ContainerClass {
+  
 public:
-    std::vector<Surface*> surfaces;
+    void render();
     static const int WIDTH = 640;
     static const int HEIGHT = 480;
     static const int BPP = 32;    
     
     Screen();
     
-    void render();
-    void add(Surface* s);
+    
 };
 
 #endif
