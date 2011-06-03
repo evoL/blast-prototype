@@ -21,6 +21,7 @@ int main (int argc, char* argv[]) {
     e.init();
 
     ImageSurface img (projectPath ("dziala.png"));
+	img.addEvent("click",&ev);
     s.add (&img);
 
     button but;

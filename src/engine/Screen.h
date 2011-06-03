@@ -5,9 +5,9 @@
 #include <vector>
 
 
-#include "ContainerClass.h"
+#include "Container.h"
 
-class Screen : public ContainerClass {
+class Screen : public Container {
   
 public:
     void render();

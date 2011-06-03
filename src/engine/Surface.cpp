@@ -1,7 +1,7 @@
 #include "Surface.h"
 #include "SDL.h"
 
-Surface::Surface() {
+Surface::Surface()  {
     surface = NULL;
     offset.x = 0;
     offset.y = 0;
