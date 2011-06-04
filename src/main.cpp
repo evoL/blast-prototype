@@ -36,8 +36,9 @@ class quit : public EventListener {  // To jest nasz event.
  */
 int main (int argc, char* argv[]) {
     Engine e;
-    Screen s;
     quit ev;
+    
+    Screen s;
     
     e.init();
 

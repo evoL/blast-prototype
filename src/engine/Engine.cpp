@@ -49,6 +49,8 @@ namespace Blast {
 
         SDL_Event event;
         Point a;
+        surface_vector dupa;
+        surface_vector::iterator it;
 
         // Tu będzie pętla (wątek?) od odświeżania obrazu.
         screen->render();
@@ -65,9 +67,10 @@ namespace Blast {
                     a.x = event.button.x;
                     a.y = event.button.y;
 
-                    Surface* dupa;
-                    dupa = screen->objectAtPoint (a);
-                    dupa->fireEvent("click");
+                    dupa = screen->objectsAtPoint (a);
+                    for (it=dupa.begin(); it < dupa.end(); it++) {
+                        (*it)->fireEvent("click");
+                    }
                     break;
                 }
             }

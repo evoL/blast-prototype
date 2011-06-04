@@ -67,20 +67,29 @@ namespace Blast {
         return ( (p.x >= offset.x) && (p.x < right) && (p.y >= offset.y) && (p.y < bottom) );
     }
     
-    Surface* Surface::objectAtPoint(Point x) {
-        std::vector<Surface*>::iterator it;
+    std::vector<Surface*> Surface::objectsAtPoint(Point x) {
+        surface_vector::iterator it, tempit;
+        surface_vector result, temp;
         
         for (it=surfaces.begin(); it<surfaces.end(); it++) {
+            
+            // Dodajemy te, co kolidują na tym samym poziomie
             if ( (*it)->collidesWith(x) && (*it)->collide ) {
-                if ( (*it)->surfaces.empty() ) {
-                    return (*it);
-                } else {
-                    return (*it)->objectAtPoint(x);
+                result.push_back(*it);
+                
+                // Dodajemy te głębiej
+                if ( !(*it)->surfaces.empty() ) {
+                    temp = (*it)->objectsAtPoint(x);
+                    
+                    for (tempit=temp.begin(); tempit<temp.end(); tempit++) {
+                        result.push_back(*tempit);
+                    }
+                    
                 }
             }
         }
         
-        return this;
+        return result;
     }
 };
 

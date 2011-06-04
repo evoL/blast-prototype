@@ -75,13 +75,14 @@ namespace Blast {
         virtual bool collidesWith (Point p);
         
         /**
-         * @brief   Zwraca kontener znajdujący się w danym punkcie.
+         * @brief   Zwraca wektor z wszystkimi powierzchniamy znajdującymi się w danym punkcie.
          * @param   x Punkt.
-         * @return  Wskaźnik do kontenera.
+         * @return  Wektor.
          */
-        virtual Surface* objectAtPoint (Point x);
+        virtual std::vector<Surface*> objectsAtPoint (Point x);
     };
-
+    
+    typedef std::vector<Surface*> surface_vector; ///< Wektor na powierzchnie.
 };
 
 #endif
