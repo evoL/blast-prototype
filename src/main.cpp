@@ -22,9 +22,13 @@
 using namespace Blast;
 
 class quit : public EventListener {  // To jest nasz event.
+public:
+    Engine* e;
+    quit(Engine* e) {
+        this->e = e;
+    }
     void execute() {
-        SDL_Quit();
-        exit (0);
+        e->quit();
     }
 };
 
@@ -36,7 +40,7 @@ class quit : public EventListener {  // To jest nasz event.
  */
 int main (int argc, char* argv[]) {
     Engine e;
-    quit ev;
+    quit ev(&e);
     
     Screen s;
     

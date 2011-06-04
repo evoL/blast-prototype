@@ -78,5 +78,9 @@ namespace Blast {
         
         running = false;
     }
+    
+    void Engine::quit() {
+        running = false;
+    }
 
 };

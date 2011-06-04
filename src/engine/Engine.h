@@ -77,6 +77,11 @@ namespace Blast {
          * @see run()
          */
         void setScreen(Screen *s);
+        
+        /**
+         * @brief  Wyłącza grę.
+         */
+        void quit();
     };
 }
 #endif /* end of include guard: ENGINE_H_9JZ11TDO */
