@@ -23,6 +23,9 @@ Debug/
 *.pdb
 *.suo
 
+# Netbeans
+/nbproject
+
 # Dokumentacja
 doc/
 

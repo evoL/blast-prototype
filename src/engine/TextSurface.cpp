@@ -38,9 +38,9 @@ namespace Blast {
         color.b = b;
     }
 
-    void TextSurface::apply(SDL_Surface* screen) {
+    void TextSurface::apply(SDL_Surface* target) {
         surface = TTF_RenderText_Blended(font, text.c_str(), color);
-        Surface::apply(screen);
+        Surface::apply(target);
     }
 };
 

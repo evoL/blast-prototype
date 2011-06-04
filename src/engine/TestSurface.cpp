@@ -2,8 +2,8 @@
 namespace Blast {
     button::button() {};
 
-    void button::apply(SDL_Surface* screen) {
-	    color = SDL_MapRGB(screen->format, 255, 0, 0);
-	    SDL_FillRect(screen, &offset, color);
+    void button::apply(SDL_Surface* target) {
+	    int color = SDL_MapRGB(target->format, 255, 0, 0);
+	    SDL_FillRect(target, &offset, color);
     }
 };

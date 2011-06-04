@@ -7,9 +7,8 @@
 namespace Blast {
     class button : public Surface {
     public:
-        int color;
-        void apply (SDL_Surface* screen);
-	    button();
+        void apply (SDL_Surface* target);
+	button();
     };
 };
 

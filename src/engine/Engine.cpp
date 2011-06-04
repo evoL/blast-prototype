@@ -15,7 +15,6 @@
 #include "Engine.h"
 #include "Screen.h"
 #include "Surface.h"
-#include "Container.h"
 #include "SDL.h"
 #include "SDL_ttf.h"
 
@@ -23,6 +22,7 @@ namespace Blast {
 
     Engine::Engine() {
         running = false;
+        screen = NULL;
     }
     Engine::~Engine() {
         TTF_Quit();
@@ -43,11 +43,12 @@ namespace Blast {
     }
 
     void Engine::run() {
+        if (screen == NULL) return;
+        
         running = true;
 
         SDL_Event event;
         Point a;
-        std::vector<Surface*>::iterator i;
 
         // Tu będzie pętla (wątek?) od odświeżania obrazu.
         screen->render();
@@ -64,16 +65,15 @@ namespace Blast {
                     a.x = event.button.x;
                     a.y = event.button.y;
 
-                    Container *dupa;
-                    dupa = (screen->objectAtPoint (a));
-                    if (dupa != NULL) dupa->fireEvent ("click");
-
-
-                }//koniec while z eventem
-            }//koniec running
-
-            running = false;
+                    Surface* dupa;
+                    dupa = screen->objectAtPoint (a);
+                    dupa->fireEvent("click");
+                    break;
+                }
+            }
         }
+        
+        running = false;
     }
 
 };

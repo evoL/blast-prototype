@@ -15,8 +15,9 @@
 #define SURFACE_H
 
 #include "SDL.h"
-#include "Container.h"
 #include "types.h"
+#include <vector>
+#include "Events.h"
 
 namespace Blast {
     
@@ -24,15 +25,18 @@ namespace Blast {
      * @class Surface
      * @brief Powierzchnia.
      */
-    class Surface : public Container{
+    class Surface : public Events {
     public:
-        SDL_Surface* surface;
+        SDL_Surface* surface; ///< Właściwa powierzchnia SDL.
+        bool collide; ///< Określa czy może kolidować z inną powierzchnią.
+        SDL_Rect offset; ///< Rozmiar i pozycja.
+        std::vector<Surface*> surfaces; ///< Wektor z powierzchniami.
 
         Surface(); ///< Konstruktor.
         ~Surface(); ///< Destruktor.
 
         /**
-         * @brief   Ustala pozycję powierzchni.
+         * @brief   Ustala pozycję powierzchni względem powierzchni bazowej.
          * @param   x Pozycja poziomo.
          * @param   y Pozycja pionowo.
          */
@@ -43,13 +47,39 @@ namespace Blast {
          * @param   h Wysokość powierzchni.
          */
         void setSize(int w, int h);
+        
+        /**
+         * @brief  Sprawia, że powierzchnia nie koliduje z niczym.
+         */
+        void noCollide();
+        
+        /**
+         * @brief   Dodaje do powierzchni jakąś podpowierzchnię.
+         * @param   s Powierzchnia do dodania.
+         */
+        virtual void add (Surface* s);
 
         /**
          * @brief   Aplikuje powierzchnię na inną.
-         * @param   screen Powierzchnia, na którą ma zaaplikować.
+         * @param   target Powierzchnia SDL, na którą ma zaaplikować.
          */
-        virtual void apply(SDL_Surface* screen);
-
+        virtual void apply(SDL_Surface* target);
+        
+        virtual void render(); ///< Wyświetla zawartość powierzchni.
+        
+        /**
+         * @brief   Sprawdza, czy powierzchnia koliduje z danym punktem.
+         * @param   p Punkt.
+         * @return  Koliduje czy nie.
+         */
+        virtual bool collidesWith (Point p);
+        
+        /**
+         * @brief   Zwraca kontener znajdujący się w danym punkcie.
+         * @param   x Punkt.
+         * @return  Wskaźnik do kontenera.
+         */
+        virtual Surface* objectAtPoint (Point x);
     };
 
 };

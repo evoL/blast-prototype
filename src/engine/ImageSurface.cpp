@@ -14,9 +14,6 @@
 #include "ImageSurface.h"
 #include "SDL_image.h"
 namespace Blast {
-
-    ImageSurface::ImageSurface() {}
-
     bool ImageSurface::load(std::string file) {
         SDL_Surface* img = NULL;
     

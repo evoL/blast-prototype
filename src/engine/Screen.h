@@ -16,8 +16,7 @@
 
 #include "SDL.h"
 #include <vector>
-
-#include "Container.h"
+#include "Surface.h"
 
 namespace Blast {
 
@@ -25,15 +24,14 @@ namespace Blast {
      * @class Screen
      * @brief Powierzchnia ekranu.
      */
-    class Screen : public Container {
-        SDL_Surface* screen; ///< Właściwy Surface z SDL
+    class Screen : public Surface {
     public:
         static const int WIDTH = 640; ///< Rozdzielczość pozioma ekranu.
         static const int HEIGHT = 480; ///< Rozdzielczość pionowa ekranu.
         static const int BPP = 32; ///< Głębia kolorów w bitach.
     
         Screen(); ///< Konstruktor.
-        void render(); ///< Robi to samo co w Container.
+        void render(); ///< Robi to samo co w Surface.
     };
 
 };

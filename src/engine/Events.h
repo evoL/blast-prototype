@@ -2,8 +2,6 @@
  *       @file  Events.h
  *      @brief  Klasa odpowiedzialna za obsługę zdarzeń w obiektach.
  *
- * Detailed description starts here.
- *
  *     @author  Rafał Hirsz, rafal@hirsz.co
  *     @author  Robert Pętlak, rpetlak@gmail.com
  *

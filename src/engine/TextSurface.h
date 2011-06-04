@@ -56,9 +56,9 @@ namespace Blast {
     
         /**
          * @brief   Aplikuje powierzchnię na inną.
-         * @param   screen Powierzchnia, na którą ma zaaplikować.
+         * @param   target Powierzchnia, na którą ma zaaplikować.
          */
-        virtual void apply(SDL_Surface* screen);
+        virtual void apply(SDL_Surface* target);
     };
 
 };

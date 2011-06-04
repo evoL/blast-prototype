@@ -20,6 +20,7 @@
 #include "engine/TestSurface.h"
 #include "engine/EventListener.h"
 using namespace Blast;
+
 class quit : public EventListener {  // To jest nasz event.
     void execute() {
         SDL_Quit();
@@ -36,7 +37,8 @@ class quit : public EventListener {  // To jest nasz event.
 int main (int argc, char* argv[]) {
     Engine e;
     Screen s;
-    quit ev;// tu se robimy obiekt
+    quit ev;
+    
     e.init();
 
     ImageSurface img;

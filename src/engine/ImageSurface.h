@@ -24,8 +24,6 @@ namespace Blast {
      */
     class ImageSurface : public Surface {
     public:
-        ImageSurface(); ///< Konstruktor.
-
         /**
          * @brief   Ładuje podany obrazek.
          * @param   file Ścieżka do pliku z obrazkiem.
