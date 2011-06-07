@@ -27,7 +27,7 @@ public:
     quit(Engine* e) {
         this->e = e;
     }
-    void execute() {
+    void operator()() {
         e->quit();
     }
 };

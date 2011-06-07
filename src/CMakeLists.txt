@@ -31,6 +31,7 @@ include_directories (
 
 add_executable (
   cuboid
+  WIN32
   main.cpp
   ${ADDITIONAL}
 )

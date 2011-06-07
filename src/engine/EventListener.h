@@ -36,7 +36,7 @@ class EventListener {
 
 public:
     EventListener(); ///< Konstruktor.
-    virtual void execute() = 0; ///< Zawiera kod zdarzenia.
+    virtual void operator()() = 0; ///< Zawiera kod zdarzenia.
 };
 
 

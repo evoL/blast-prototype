@@ -23,8 +23,9 @@ namespace Blast {
         vec = eventMap[name.c_str()];
 
 	    if (vec.size() > 0){
-            for (it = vec.begin(); it < vec.end(); it++ )
-                (*it)->execute();
+			for (it = vec.begin(); it < vec.end(); it++ ) {
+                (*(*it))();
+			}
         }
     }
 
