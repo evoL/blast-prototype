@@ -19,12 +19,12 @@
  * @brief Klasa bazowa do obsługi zdarzeń.
  *
  * Klasa ta jest abstrakcyjna. Żeby jej użyć, należy utworzyć podklasę i nadpisać metodę
- * \c execute() .
+ * \c operator()() .
  *
  * Przykład użycia:
  * @code
  * class LolEvent : public EventListener {
- *     void execute() {
+ *     void operator()() {
  *         std::cout << "LOL!" << std::endl;
  *     }
  * }
