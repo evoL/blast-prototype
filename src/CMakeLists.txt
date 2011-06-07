@@ -16,7 +16,7 @@ endif ()
 include_directories (
   .
   engine
-  #{INCDIRS}
+  ${INCDIRS}
 )
 
 add_executable (
@@ -29,5 +29,5 @@ add_executable (
 target_link_libraries (
   cuboid
   engine
-  #{LIBS}
+  ${LIBS}
 )
