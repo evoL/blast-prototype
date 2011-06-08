@@ -32,8 +32,21 @@ namespace Blast {
         offset.x = x;
         offset.y = y;
     }
+    void Surface::setX(int x) {
+        offset.x = x;
+    }
+    void Surface::setY(int y) {
+        offset.y = y;
+    }
+    
     void Surface::setSize(int w, int h) {
         offset.w = w;
+        offset.h = h;
+    }
+    void Surface::setWidth(int w) {
+        offset.w = w;
+    }
+    void Surface::setHeight(int h) {
         offset.h = h;
     }
 

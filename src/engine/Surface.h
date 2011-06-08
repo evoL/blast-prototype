@@ -44,12 +44,41 @@ namespace Blast {
          * @param   y Pozycja pionowo.
          */
         void setPosition(int x, int y);
+        
+        /**
+         * @brief   Ustala względną poziomą pozycję powierzchni.
+         * @param   x Nowa pozycja.
+         * @see setPosition
+         */
+        void setX(int x);
+        
+        /**
+         * @brief   Ustala względną pionową pozycję powierzchni.
+         * @param   y Nowa pozycja.
+         * @see setPosition
+         */
+        void setY(int y);
+        
         /**
          * @brief   Ustala rozmiar powierzchni.
          * @param   w Szerokość powierzchni.
          * @param   h Wysokość powierzchni.
          */
         void setSize(int w, int h);
+        
+        /**
+         * @brief   Ustala szerokość powierzchni.
+         * @param   w Nowa szerokość.
+         * @see setSize
+         */
+        void setWidth(int w);
+        
+        /**
+         * @brief   Ustala wysokość powierzchni.
+         * @param   h Nowa wysokość.
+         * @see setSize
+         */
+        void setHeight(int h);
         
         /**
          * @brief  Sprawia, że powierzchnia nie koliduje z niczym.

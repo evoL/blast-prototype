@@ -40,10 +40,13 @@ public:
     
     animate(button* b) {
         but = b;
-        t.bounds(0, 128).duration(1000).loop();
+        t.bounds(-20, 20).transition(Tween::TRANSITION_QUAD | Tween::EASING_BOTH).duration(250).loop();
     }
     void operator()(int delta) {
-        but->anim = (int)t.go(delta);
+        //but->anim = (int)t.go(delta);
+        int val = (int)t.go(delta);
+        but->setX(150 - (val/2));
+        but->setWidth(300 + val);
     }
 };
 
