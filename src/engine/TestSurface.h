@@ -7,6 +7,8 @@
 namespace Blast {
     class button : public Surface {
     public:
+        int anim;
+        
         void apply (SDL_Surface* target);
 	button();
     };

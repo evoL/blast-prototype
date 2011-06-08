@@ -17,7 +17,8 @@
 #include "SDL.h"
 #include "types.h"
 #include <vector>
-#include "Events.h"
+
+#include "boost/signals2.hpp"
 
 namespace Blast {
     
@@ -25,12 +26,14 @@ namespace Blast {
      * @class Surface
      * @brief Powierzchnia.
      */
-    class Surface : public Events {
+    class Surface {
     public:
         SDL_Surface* surface; ///< Właściwa powierzchnia SDL.
         bool collide; ///< Określa czy może kolidować z inną powierzchnią.
         SDL_Rect offset; ///< Rozmiar i pozycja.
         std::vector<Surface*> surfaces; ///< Wektor z powierzchniami.
+        
+        boost::signals2::signal<void ()> onClick; ///< Sygnał klknięcia.
 
         Surface(); ///< Konstruktor.
         ~Surface(); ///< Destruktor.

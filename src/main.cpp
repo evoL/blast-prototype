@@ -18,10 +18,9 @@
 #include "engine/ImageSurface.h"
 #include "engine/TextSurface.h"
 #include "engine/TestSurface.h"
-#include "engine/EventListener.h"
 using namespace Blast;
 
-class quit : public EventListener {  // To jest nasz event.
+class quit {  // To jest nasz event.
 public:
     Engine* e;
     quit(Engine* e) {
@@ -29,6 +28,36 @@ public:
     }
     void operator()() {
         e->quit();
+    }
+};
+
+class animate {
+public:
+    float dupa;
+    bool in;
+    button* but;
+    
+    animate(button* b) {
+        but = b;
+        dupa = 0;
+        in = true;
+    }
+    void operator()(int delta) {
+        if (in) {
+            dupa += (128 * (delta / 1000.0f));
+        } else {
+            dupa -= (128 * (delta / 1000.0f));
+        }
+        
+        but->anim = (int)dupa;
+        
+        if (but->anim < 0) {
+            but->anim = 0;
+            in = true;
+        } else if (but->anim > 128) {
+            but->anim = 128;
+            in = false;
+        }
     }
 };
 
@@ -53,7 +82,11 @@ int main (int argc, char* argv[]) {
     button but;
     but.setPosition (150, 300);
     but.setSize (300, 50);
-    but.addEvent ("click", &ev); // A TU USTAWIAMY EVENT!!!!!!!!!!!!!!!!!!!!!
+    //but.addEvent ("click", &ev); // A TU USTAWIAMY EVENT!!!!!!!!!!!!!!!!!!!!!
+    but.onClick.connect(ev);
+    
+    animate ev2(&but);
+    e.onTick.connect(ev2);
 
     TextSurface exit;   //tu jest napis na pseudo buttona
     exit.setText ("Click to Quit");

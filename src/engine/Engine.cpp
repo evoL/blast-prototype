@@ -51,12 +51,10 @@ namespace Blast {
         Point a;
         surface_vector dupa;
         surface_vector::iterator it;
+        int previous = SDL_GetTicks();
+        int time;
 
-        // Tu będzie pętla (wątek?) od odświeżania obrazu.
-        screen->render();
-
-        // Pętla do eventów
-        // TODO: zrobić to w osobnym wątku
+        // Pętla główna
         while (running) {
             while (SDL_PollEvent (&event)) {
                 switch (event.type) {
@@ -69,11 +67,21 @@ namespace Blast {
 
                     dupa = screen->objectsAtPoint (a);
                     for (it=dupa.begin(); it < dupa.end(); it++) {
-                        (*it)->fireEvent("click");
+                        //(*it)->fireEvent("click");
+                        (*it)->onClick();
                     }
                     break;
                 }
             }
+            
+            // żeby ruch był
+            time = SDL_GetTicks();
+            onTick(time - previous);
+            
+            // rysowanie
+            screen->render();
+            
+            previous = time;
         }
         
         running = false;

@@ -39,6 +39,8 @@ namespace Blast {
         bool running; ///< Zmienna określająca, czy gra działa.
 
     public:
+        boost::signals2::signal<void (int)> onTick; ///< Sygnał wywoływany co klatkę.
+        
     
         /**
          * @brief   Konstuktor.
