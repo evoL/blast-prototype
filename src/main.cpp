@@ -18,6 +18,8 @@
 #include "engine/ImageSurface.h"
 #include "engine/TextSurface.h"
 #include "engine/TestSurface.h"
+#include "engine/Tween.h"
+
 using namespace Blast;
 
 class quit {  // To jest nasz event.
@@ -33,31 +35,15 @@ public:
 
 class animate {
 public:
-    float dupa;
-    bool in;
     button* but;
+    Tween t;
     
     animate(button* b) {
         but = b;
-        dupa = 0;
-        in = true;
+        t.bounds(0, 128).duration(1000).loop();
     }
     void operator()(int delta) {
-        if (in) {
-            dupa += (128 * (delta / 1000.0f));
-        } else {
-            dupa -= (128 * (delta / 1000.0f));
-        }
-        
-        but->anim = (int)dupa;
-        
-        if (but->anim < 0) {
-            but->anim = 0;
-            in = true;
-        } else if (but->anim > 128) {
-            but->anim = 128;
-            in = false;
-        }
+        but->anim = (int)t.go(delta);
     }
 };
 
